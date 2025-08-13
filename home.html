@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar animate-slide-down">
     <div class="nav-container">
       <div class="logo">
-        <h1>🏔️ Healthmandu</h1>
+        <h1>Healthmandu</h1>
         <span class="logo-subtitle">काठमाडौं स्वास्थ्य सेवा</span>
       </div>
       <ul class="nav-links">
@@ -22,17 +22,18 @@
         <li><a href="#">Emergency</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">सहायता</a></li>
+        <li><a href="#" onclick="logout()" class="logout-btn">Logout</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="app-container">
     <!-- Enhanced Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar animate-slide-left">
       <div class="profile-card">
         <div class="profile-header">
-          <h3>नमस्ते! Welcome back</h3>
-          <div class="weather-widget">
+          <h3 id="userGreeting">नमस्ते! Welcome back</h3>
+          <div class="weather-widget animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="weather-info">
               <span class="temp">22°C</span>
               <span class="condition">Partly Cloudy</span>
@@ -41,11 +42,11 @@
           </div>
         </div>
         <form class="profile-form">
-          <div class="input-group">
+          <div class="input-group animate-fade-in-up" style="animation-delay: 0.4s;">
             <label for="name">नाम / Name</label>
             <input type="text" id="name" placeholder="Enter your name" />
           </div>
-          <div class="input-group">
+          <div class="input-group animate-fade-in-up" style="animation-delay: 0.5s;">
             <label for="location">स्थान / Location</label>
             <select id="location">
               <option value="" disabled selected>Select Ward/Area</option>
@@ -59,7 +60,7 @@
               <option value="bhaktapur">Bhaktapur (भक्तपुर)</option>
             </select>
           </div>
-          <div class="profile-info">
+          <div class="profile-info animate-fade-in-up" style="animation-delay: 0.6s;">
             <p>
               🏥 Your location helps us find nearby hospitals, clinics, and wellness centers.
               <br><br>
@@ -71,31 +72,31 @@
     </aside>
 
     <!-- Enhanced Main Content -->
-    <main class="main-content">
+    <main class="main-content animate-slide-right">
       <!-- Greeting + AQI with Himalayan context -->
-      <section class="greeting-section">
-        <div class="greeting-card">
+      <section class="greeting-section scroll-animate">
+        <div class="greeting-card animate-fade-in-up" style="animation-delay: 0.2s;">
           <h2>स्वागतम्! Welcome to Healthmandu</h2>
           <p>
             Your comprehensive health dashboard for Kathmandu Valley. Find real-time air quality data, 
-            locate nearby hospitals, discover wellness centers, and stay updated with health events 
+            locate nearby hospitals, clinics, and wellness centers, and stay updated with health events 
             in the heart of Nepal.
           </p>
           <div class="quick-stats">
-            <div class="stat">
-              <span class="stat-number">47</span>
+            <div class="stat animate-counter" data-target="47">
+              <span class="stat-number">0</span>
               <span class="stat-label">Health Centers</span>
             </div>
-            <div class="stat">
-              <span class="stat-number">23</span>
+            <div class="stat animate-counter" data-target="23">
+              <span class="stat-number">0</span>
               <span class="stat-label">Wellness Spots</span>
             </div>
           </div>
         </div>
-        <div class="aqi-card">
+        <div class="aqi-card animate-fade-in-up" style="animation-delay: 0.4s;">
           <h3>🌫️ Air Quality Index</h3>
           <div class="aqi-value">
-            <span class="aqi-number">156</span>
+            <span class="aqi-number animate-counter" data-target="156">0</span>
             <span class="aqi-status unhealthy">Unhealthy</span>
           </div>
           <p>
@@ -109,15 +110,15 @@
       </section>
 
       <!-- Enhanced Tabs -->
-      <section class="tabs-container">
+      <section class="tabs-container scroll-animate">
         <div class="tabs">
-          <button class="tab active" data-tab="health-centers">
+          <button class="tab active animate-slide-up" data-tab="health-centers" style="animation-delay: 0.1s;">
             🏥 Health Centers
           </button>
-          <button class="tab" data-tab="wellness-spots">
+          <button class="tab animate-slide-up" data-tab="wellness-spots" style="animation-delay: 0.2s;">
             🧘‍♀️ Wellness & Ayurveda
           </button>
-          <button class="tab" data-tab="pharmacies">
+          <button class="tab animate-slide-up" data-tab="pharmacies" style="animation-delay: 0.3s;">
             💊 Pharmacies
           </button>
         </div>
@@ -125,42 +126,42 @@
         <div class="tabpanel active" id="health-centers">
           <h3>Major Hospitals & Clinics in Kathmandu</h3>
           <div class="grid">
-            <div class="card featured">
+            <div class="card featured scroll-animate-card" style="animation-delay: 0.1s;">
               <h4>🏥 TU Teaching Hospital</h4>
               <p>📍 Maharajgunj, Kathmandu</p>
               <p>🚨 24/7 Emergency & Trauma Center</p>
               <p>📞 +977-1-4412303</p>
               <div class="card-badge">Government</div>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.2s;">
               <h4>🏥 Bir Hospital</h4>
               <p>📍 Mahaboudha, Kathmandu</p>
               <p>🩺 General Medicine & Surgery</p>
               <p>📞 +977-1-4221119</p>
               <div class="card-badge">Government</div>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.3s;">
               <h4>🏥 Patan Hospital</h4>
               <p>📍 Lagankhel, Lalitpur</p>
               <p>👶 Pediatrics & Maternity</p>
               <p>📞 +977-1-5522266</p>
               <div class="card-badge">NGO</div>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.4s;">
               <h4>🏥 Grande International Hospital</h4>
               <p>📍 Dhapasi, Kathmandu</p>
               <p>💎 Premium Healthcare Services</p>
               <p>📞 +977-1-5159266</p>
               <div class="card-badge private">Private</div>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.5s;">
               <h4>🏥 Nepal Medical College</h4>
               <p>📍 Jorpati, Kathmandu</p>
               <p>🎓 Teaching Hospital</p>
               <p>📞 +977-1-4911008</p>
               <div class="card-badge">Private</div>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.6s;">
               <h4>🏥 Dhulikhel Hospital</h4>
               <p>📍 Dhulikhel, Kavre</p>
               <p>🌄 Community Healthcare</p>
@@ -173,37 +174,37 @@
         <div class="tabpanel" id="wellness-spots">
           <h3>Wellness Centers & Traditional Medicine</h3>
           <div class="grid">
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.1s;">
               <h4>🧘‍♀️ Nepal Yoga Home</h4>
               <p>📍 Thamel, Kathmandu</p>
               <p>🕉️ Traditional Yoga & Meditation</p>
               <p>📞 +977-1-4700632</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.2s;">
               <h4>🌿 Ayurveda Health Home</h4>
               <p>📍 New Baneshwor, Kathmandu</p>
               <p>🌱 Panchakarma & Herbal Treatment</p>
               <p>📞 +977-1-4782333</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.3s;">
               <h4>💆‍♀️ Seeing Hands Clinic</h4>
               <p>📍 Lazimpat, Kathmandu</p>
               <p>👐 Therapeutic Massage by Visually Impaired</p>
               <p>📞 +977-1-4429178</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.4s;">
               <h4>🧘‍♂️ Himalayan Yoga Academy</h4>
               <p>📍 Bouddha, Kathmandu</p>
               <p>🏔️ Mountain Meditation Retreats</p>
               <p>📞 +977-1-4480430</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.5s;">
               <h4>🌸 Spa Therapy Center</h4>
               <p>📍 Durbar Marg, Kathmandu</p>
               <p>💅 Wellness & Beauty Treatments</p>
               <p>📞 +977-1-4220909</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.6s;">
               <h4>🏃‍♂️ Fitness First Nepal</h4>
               <p>📍 Anamnagar, Kathmandu</p>
               <p>💪 Modern Gym & Fitness Classes</p>
@@ -215,19 +216,19 @@
         <div class="tabpanel" id="pharmacies">
           <h3>24/7 Pharmacies & Medical Stores</h3>
           <div class="grid">
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.1s;">
               <h4>💊 Bhat Bhateni Pharmacy</h4>
               <p>📍 Multiple Locations</p>
               <p>🕐 24/7 Service Available</p>
               <p>📞 +977-1-4221457</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.2s;">
               <h4>💊 Omni Pharmacy</h4>
               <p>📍 New Road, Kathmandu</p>
               <p>🩹 Medical Equipment & Supplies</p>
               <p>📞 +977-1-4220055</p>
             </div>
-            <div class="card">
+            <div class="card scroll-animate-card" style="animation-delay: 0.3s;">
               <h4>💊 Medicare Pharmacy</h4>
               <p>📍 Maharajgunj, Kathmandu</p>
               <p>💉 Prescription & OTC Medicines</p>
@@ -238,9 +239,9 @@
       </section>
 
       <!-- Enhanced Events with Nepali context -->
-      <section class="events-section">
+      <section class="events-section scroll-animate">
         <h3>🗓️ Upcoming Health Events</h3>
-        <div class="event-card">
+        <div class="event-card scroll-animate-event" style="animation-delay: 0.1s;">
           <div class="event-date">
             <span class="day">15</span>
             <span class="month">Bhadra</span>
@@ -250,7 +251,7 @@
             <span class="event-desc">Blood pressure & diabetes screening</span>
           </div>
         </div>
-        <div class="event-card">
+        <div class="event-card scroll-animate-event" style="animation-delay: 0.2s;">
           <div class="event-date">
             <span class="day">22</span>
             <span class="month">Bhadra</span>
@@ -260,7 +261,7 @@
             <span class="event-desc">Free yoga sessions & meditation workshop</span>
           </div>
         </div>
-        <div class="event-card">
+        <div class="event-card scroll-animate-event" style="animation-delay: 0.3s;">
           <div class="event-date">
             <span class="day">5</span>
             <span class="month">Ashwin</span>
@@ -270,7 +271,7 @@
             <span class="event-desc">Help save lives in our community</span>
           </div>
         </div>
-        <div class="event-card">
+        <div class="event-card scroll-animate-event" style="animation-delay: 0.4s;">
           <div class="event-date">
             <span class="day">12</span>
             <span class="month">Ashwin</span>
@@ -284,33 +285,7 @@
     </main>
   </div>
 
-  <script>
-    // Enhanced tabs functionality
-    const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.tabpanel');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active class from all tabs & panels
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
-
-        // Add active class to clicked tab & related panel
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
-      });
-    });
-
-    // Dynamic greeting based on time
-    const now = new Date();
-    const hour = now.getHours();
-    let greeting = 'नमस्ते!';
-    
-    if (hour < 12) greeting = 'शुभ प्रभात! Good Morning';
-    else if (hour < 17) greeting = 'नमस्कार! Good Afternoon';
-    else greeting = 'शुभ साँझ! Good Evening';
-    
-    document.querySelector('.profile-header h3').textContent = greeting + ' Welcome back';
-  </script>
+  <script src="home-script.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>
